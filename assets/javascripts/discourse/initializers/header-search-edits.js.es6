@@ -13,9 +13,9 @@ export default {
       toggleHeaderSearch() {
         var headerWidth = this.$('.d-header .contents').width(),
             panelWidth = this.$('.d-header .panel').width(),
-            titleWidth = 730;
+            titleWidth = 0;
         const appController = this.container.lookup('controller:application')
-        var showHeaderSearch = Boolean(headerWidth > (panelWidth + titleWidth + 50)),
+        var showHeaderSearch = Boolean(headerWidth > (panelWidth + titleWidth)),
             currentState = appController.get('showHeaderSearch');
         appController.set('showHeaderSearch', showHeaderSearch)
         if ((showHeaderSearch != currentState) || currentState === undefined) {
